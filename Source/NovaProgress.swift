@@ -317,14 +317,14 @@ private class NovaProgressView: UIView {
         outerCircleLayer.lineWidth = outerStrokeWidth
         outerCircleLayer.strokeStart = 0.0
         outerCircleLayer.strokeEnd = 1
-        outerCircleLayer.lineCap = kCALineCapRound
+        outerCircleLayer.lineCap = kCALineCapSquare
         outerCircleLayer.fillColor = UIColor.clearColor().CGColor
         outerCircleLayer.strokeColor = outerCircleColor.CGColor
 
         innerCircleLayer.lineWidth = innerStrokeWidth
         innerCircleLayer.strokeStart = 0
         innerCircleLayer.strokeEnd = 1
-        innerCircleLayer.lineCap = kCALineCapRound
+        innerCircleLayer.lineCap = kCALineCapSquare
         innerCircleLayer.fillColor = UIColor.clearColor().CGColor
         innerCircleLayer.strokeColor = innerCircleColor.CGColor
 
