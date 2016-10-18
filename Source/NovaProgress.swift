@@ -10,7 +10,7 @@ import CoreGraphics
     public static let sharedInstance = NovaProgress()
 
 
-    public func push(status: String?, animated: Bool = true) {
+    public func push(status: String? = nil, animated: Bool = true) {
         if let status = status {
             statusMessages.append(status)
         } else {
@@ -85,6 +85,10 @@ import CoreGraphics
 
         if containerView == nil {
             containerView = UIApplication.sharedApplication().keyWindow
+        }
+        
+        if containerView == nil {
+            return
         }
 
         if modalView.superview !== containerView {
