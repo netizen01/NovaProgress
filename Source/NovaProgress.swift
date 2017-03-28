@@ -237,7 +237,8 @@ private class NovaProgressView: UIView {
         if linearRotation {
             let animation = CABasicAnimation(keyPath: "transform.rotation")
             animation.fromValue = 0
-            animation.toValue = -M_PI * 2
+            
+            animation.toValue = -(CGFloat.pi * 2)
             animation.duration = 2
             animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
             animation.isRemovedOnCompletion = false
@@ -248,7 +249,7 @@ private class NovaProgressView: UIView {
 
         } else {
             let duration = Double(Float(arc4random()) /  Float(UInt32.max)) * 0.5 + 0.25
-            let randomRotation = Double(Float(arc4random()) /  Float(UInt32.max)) * M_PI_4 + M_PI_4
+            let randomRotation = Double(Float(arc4random()) /  Float(UInt32.max)) * (.pi / 4) + (.pi / 4)
             _ = Double(Float(arc4random()) /  Float(UInt32.max)) * 1.0 + 1.0
 
             UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.0, options: [.beginFromCurrentState, .allowAnimatedContent], animations: { [weak self] in
@@ -270,7 +271,7 @@ private class NovaProgressView: UIView {
         if linearRotation {
             let animation = CABasicAnimation(keyPath: "transform.rotation")
             animation.fromValue = 0
-            animation.toValue = M_PI * 2
+            animation.toValue = CGFloat.pi * 2
             animation.duration = 4
             animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
             animation.isRemovedOnCompletion = false
@@ -286,7 +287,7 @@ private class NovaProgressView: UIView {
                 }
 
                 }) { [weak self] (success) in
-                    self?.innerCircleCurrentRotation += M_PI_4
+                    self?.innerCircleCurrentRotation += .pi / 4
                     if success {
                         self?.spinInnerCircle(0.15)
                     }
@@ -312,8 +313,8 @@ private class NovaProgressView: UIView {
         innerCircleLayer.removeFromSuperlayer()
         outerCircleLayer.removeFromSuperlayer()
 
-        innerCircleCurrentRotation = (Double(arc4random_uniform(100)) / 100) * M_PI
-        outerCircleCurrentRotation = (Double(arc4random_uniform(100)) / 100) * M_PI
+        innerCircleCurrentRotation = (Double(arc4random_uniform(100)) / 100) * .pi
+        outerCircleCurrentRotation = (Double(arc4random_uniform(100)) / 100) * .pi
 
         outerCircleView.layer.addSublayer(outerCircleLayer)
         innerCircleView.layer.addSublayer(innerCircleLayer)
