@@ -5,12 +5,12 @@
 import UIKit
 import CoreGraphics
 
-@objc open class NovaProgress: NSObject {
+@objc public class NovaProgress: NSObject {
 
-    open static let sharedInstance = NovaProgress()
+    public static let sharedInstance = NovaProgress()
 
 
-    open func push(_ status: String? = nil, animated: Bool = true) {
+    public func push(_ status: String? = nil, animated: Bool = true) {
         if let status = status {
             statusMessages.append(status)
         } else {
@@ -20,42 +20,42 @@ import CoreGraphics
         updateProgress(animated)
     }
 
-    open func clear(_ animated: Bool = true) {
+    public func clear(_ animated: Bool = true) {
         statusMessages.removeAll(keepingCapacity: false)
 
         updateProgress(animated)
     }
 
-    open func pop(_ animated: Bool = true) {
+    public func pop(_ animated: Bool = true) {
         if statusMessages.count > 0 {
             statusMessages.removeLast()
         }
         updateProgress(animated)
     }
 
-    open var currentStatus: String? {
+    public var currentStatus: String? {
         return statusMessages.last
     }
 
-    open var linearRotation: Bool = true {
+    public var linearRotation: Bool = true {
         didSet {
             progressView.linearRotation = linearRotation
         }
     }
 
-    open var containerView: UIView?
+    public var containerView: UIView?
 
-    open fileprivate(set) var visible: Bool = false
+    public fileprivate(set) var visible: Bool = false
 
-    open var fadeAnimationDuration: Double = 0.25
-    open var progressRadius: Double = 50 {
+    public var fadeAnimationDuration: Double = 0.25
+    public var progressRadius: Double = 50 {
         didSet {
             progressView.frame = CGRect(x: 0, y: 0, width: progressRadius * 2, height: progressRadius * 2)
             progressView.center = modalView.center
         }
     }
 
-    fileprivate override init() {
+    public override init() {
         modalView.addSubview(progressView)
         modalView.backgroundColor = UIColor(white: 0, alpha: 0.5)
         modalView.alpha = 0
