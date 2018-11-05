@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
     spec.name                   = 'NovaProgress'
-    spec.version                = '0.5'
+    spec.version                = '0.6'
     spec.summary                = 'Another Progress Overlay. Because.'
 
     spec.homepage               = 'https://github.com/netizen01/NovaProgress'
@@ -13,6 +13,6 @@ Pod::Spec.new do |spec|
     spec.source                 = { :git => 'https://github.com/netizen01/NovaProgress.git',
                                     :tag => spec.version.to_s }
     spec.source_files           = 'Source/**/*.swift'
-    spec.pod_target_xcconfig    = { 'SWIFT_VERSION' => '4.0' }
+    spec.swift_version          = '4.2'
 
 end

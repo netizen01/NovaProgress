@@ -240,10 +240,10 @@ private class NovaProgressView: UIView {
             
             animation.toValue = -(CGFloat.pi * 2)
             animation.duration = 2
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
             animation.isRemovedOnCompletion = false
             animation.repeatCount = HUGE
-            animation.fillMode = kCAFillModeForwards
+            animation.fillMode = .forwards
             animation.autoreverses = false
             outerCircleView.layer.add(animation, forKey: "rotate")
 
@@ -273,10 +273,10 @@ private class NovaProgressView: UIView {
             animation.fromValue = 0
             animation.toValue = CGFloat.pi * 2
             animation.duration = 4
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
             animation.isRemovedOnCompletion = false
             animation.repeatCount = HUGE
-            animation.fillMode = kCAFillModeForwards
+            animation.fillMode = .forwards
             animation.autoreverses = false
             innerCircleView.layer.add(animation, forKey: "rotate")
 
@@ -322,14 +322,14 @@ private class NovaProgressView: UIView {
         outerCircleLayer.lineWidth = outerStrokeWidth
         outerCircleLayer.strokeStart = 0.0
         outerCircleLayer.strokeEnd = 1
-        outerCircleLayer.lineCap = kCALineCapSquare
+        outerCircleLayer.lineCap = .square
         outerCircleLayer.fillColor = UIColor.clear.cgColor
         outerCircleLayer.strokeColor = outerCircleColor.cgColor
 
         innerCircleLayer.lineWidth = innerStrokeWidth
         innerCircleLayer.strokeStart = 0
         innerCircleLayer.strokeEnd = 1
-        innerCircleLayer.lineCap = kCALineCapSquare
+        innerCircleLayer.lineCap = .square
         innerCircleLayer.fillColor = UIColor.clear.cgColor
         innerCircleLayer.strokeColor = innerCircleColor.cgColor
 
